@@ -670,84 +670,7 @@ with r4:
     """, unsafe_allow_html=True)
 
 # ───────────────────────── TABLE ─────────────────────────
-st.markdown("---")
-st.markdown(
-    '<div class="section-title">⚠️ Clients à Risque Élevé (Top 20)</div>',
-    unsafe_allow_html=True
-)
-
-cols_show = ['CustomerId','Age','Geography','Gender','Balance',
-             'CreditScore','NumOfProducts','Exited','Proba','Risque']
-
-cols_avail = [c for c in cols_show if c in df_f.columns]
-
-st.dataframe(
-    df_f.nlargest(20, 'Proba')[cols_avail]
-    .style.background_gradient(subset=['Proba'], cmap='YlOrRd'),
-    use_container_width=True
-)
-
 st.markdown(f"""
-<style>
-.header {{
-    background: linear-gradient(90deg,#071421,#0D2A4A);
-    padding:20px;
-    border-radius:15px;
-    border:1px solid #C9A84C;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}}
-
-.header-left {{
-    display:flex;
-    align-items:center;
-    gap:20px;
-}}
-
-.header img {{
-    width:80px;
-}}
-
-.title {{
-    font-size:26px;
-    font-weight:bold;
-}}
-
-.subtitle {{
-    color:#C9A84C;
-}}
-
-.card {{
-    background:#0D1B2A;
-    padding:20px;
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,0.1);
-    text-align:center;
-}}
-
-.card h3 {{
-    color:#C9A84C;
-    font-size:13px;
-}}
-
-.card h2 {{
-    font-size:26px;
-}}
-
-.section {{
-    background:#0D1B2A;
-    padding:15px;
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,0.1);
-}}
-
-[data-testid="stSidebar"] {{
-    background:#071421;
-}}
-
-</style>
-
 <div class="header">
     <div class="header-left">
         <img src="data:image/png;base64,{logo}">
@@ -757,11 +680,80 @@ st.markdown(f"""
         </div>
     </div>
 
-    st.markdown("""
-<div style="text-align:right; line-height:1.4">
-    <div style="color:#C9A84C; font-weight:bold;">Africa AI Consulting</div>
-    <div style="font-size:12px; opacity:0.8;">Données simulées IA Banking Dashboard</div>
+    <div style="text-align:right; line-height:1.4">
+        <div style="color:#C9A84C; font-weight:bold;">
+            Africa AI Consulting
+        </div>
+        <div style="font-size:12px; opacity:0.8;">
+            Données simulées IA Banking Dashboard
+        </div>
+    </div>
 </div>
+""", unsafe_allow_html=True)
+
+
+st.markdown("""
+<style>
+
+.header {
+    background: linear-gradient(90deg,#071421,#0D2A4A);
+    padding:20px;
+    border-radius:15px;
+    border:1px solid #C9A84C;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.header-left {
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.header img {
+    width:80px;
+}
+
+.title {
+    font-size:26px;
+    font-weight:bold;
+}
+
+.subtitle {
+    color:#C9A84C;
+    font-size:14px;
+}
+
+.card {
+    background:#0D1B2A;
+    padding:20px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.1);
+    text-align:center;
+}
+
+.card h3 {
+    color:#C9A84C;
+    font-size:13px;
+}
+
+.card h2 {
+    font-size:26px;
+}
+
+.section {
+    background:#0D1B2A;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+[data-testid="stSidebar"] {
+    background:#071421;
+}
+
+</style>
 """, unsafe_allow_html=True)
 # ───────────────────────── DATA ─────────────────────────
 @st.cache_data
