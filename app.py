@@ -669,29 +669,7 @@ with r4:
     </div>
     """, unsafe_allow_html=True)
 
-# ───────────────────────── TABLE ─────────────────────────
-st.markdown(f"""
-<div class="header">
-    <div class="header-left">
-        <img src="data:image/png;base64,{logo}">
-        <div>
-            <div class="title">DASHBOARD BANCAIRE</div>
-            <div class="subtitle">SCORING CRÉDIT & CHURN</div>
-        </div>
-    </div>
-
-    <div style="text-align:right; line-height:1.4">
-        <div style="color:#C9A84C; font-weight:bold;">
-            Africa AI Consulting
-        </div>
-        <div style="font-size:12px; opacity:0.8;">
-            Données simulées IA Banking Dashboard
-        </div>
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-
+# ───────── CSS ─────────
 st.markdown("""
 <style>
 
@@ -754,6 +732,28 @@ st.markdown("""
 }
 
 </style>
+""", unsafe_allow_html=True)
+
+# ───────── HEADER ─────────
+st.markdown(f"""
+<div class="header">
+    <div class="header-left">
+        <img src="data:image/png;base64,{logo}">
+        <div>
+            <div class="title">DASHBOARD BANCAIRE</div>
+            <div class="subtitle">SCORING CRÉDIT & CHURN</div>
+        </div>
+    </div>
+
+    <div style="text-align:right; line-height:1.4">
+        <div style="color:#C9A84C; font-weight:bold;">
+            Africa AI Consulting
+        </div>
+        <div style="font-size:12px; opacity:0.8;">
+            Données simulées IA Banking Dashboard
+        </div>
+    </div>
+</div>
 """, unsafe_allow_html=True)
 # ───────────────────────── DATA ─────────────────────────
 @st.cache_data
