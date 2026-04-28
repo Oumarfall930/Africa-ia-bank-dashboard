@@ -19,10 +19,10 @@ def get_base64(path):
         return base64.b64encode(f.read()).decode()
 
 logo = ""
-if os.path.exists("logo.png"):
-    logo = get_base64("logo.png")
+if os.path.exists("logo.jpeg"):
+    logo = get_base64("logo.jpeg")
 
-logo_tag = f'<img src="data:image/png;base64,{logo}" style="width:90px;height:90px;object-fit:contain;">' if logo else '<div style="width:90px;height:90px;background:linear-gradient(135deg,#1a4a8a,#0D2A4A);border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #C9A84C;font-size:28px;color:#C9A84C;font-weight:bold;">AI</div>'
+logo_tag = f'<img src="data:image/jpeg;base64,{logo}" style="width:90px;height:90px;object-fit:contain;">' if logo else '<div style="width:90px;height:90px;background:linear-gradient(135deg,#1a4a8a,#0D2A4A);border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #C9A84C;font-size:28px;color:#C9A84C;font-weight:bold;">AI</div>'
 
 # ───────────────────────── CSS ─────────────────────────
 st.markdown(f"""
