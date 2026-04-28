@@ -61,8 +61,7 @@ st.markdown("""
 # ── Chargement des données ────────────────────────────────────────────
 @st.cache_data
 def load_and_train():
-   df = pd.read_csv("Churn_Modelling.csv")
-
+    df = pd.read_csv("Churn_Modelling.csv")
     df_clean = df.drop(columns=['RowNumber', 'CustomerId', 'Surname'])
     le = LabelEncoder()
     df_clean['Gender']    = le.fit_transform(df_clean['Gender'])
