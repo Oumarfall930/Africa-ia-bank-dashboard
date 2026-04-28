@@ -738,7 +738,7 @@ st.markdown("""
 st.markdown(f"""
 <div class="header">
     <div class="header-left">
-        <img src="data:image/png;base64,{logo}">
+        <img src="data:image/jpeg;base64,{logo}">
         <div>
             <div class="title">DASHBOARD BANCAIRE</div>
             <div class="subtitle">SCORING CRÉDIT & CHURN</div>
