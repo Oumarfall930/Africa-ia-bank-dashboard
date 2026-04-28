@@ -671,13 +671,25 @@ with r4:
 
 # ───────────────────────── TABLE ─────────────────────────
 st.markdown("---")
-st.markdown('<div class="section-title">⚠️ Clients à Risque Élevé (Top 20)</div>', unsafe_allow_html=True)
-cols_show = ['CustomerId','Age','Geography','Gender','Balance','CreditScore','NumOfProducts','Exited','Proba','Risque']
+st.markdown(
+    '<div class="section-title">⚠️ Clients à Risque Élevé (Top 20)</div>',
+    unsafe_allow_html=True
+)
+
+cols_show = ['CustomerId','Age','Geography','Gender','Balance',
+             'CreditScore','NumOfProducts','Exited','Proba','Risque']
+
 cols_avail = [c for c in cols_show if c in df_f.columns]
+
 st.dataframe(
-    df_f.nlargest(20, 'Proba')[cols_avail].style.background_gradient(subset=['Proba'], cmap='YlOrRd'),
+    df_f.nlargest(20, 'Proba')[cols_avail]
+    .style.background_gradient(subset=['Proba'], cmap='YlOrRd'),
     use_container_width=True
-).header {{
+)
+
+st.markdown(f"""
+<style>
+.header {{
     background: linear-gradient(90deg,#071421,#0D2A4A);
     padding:20px;
     border-radius:15px;
@@ -712,7 +724,7 @@ st.dataframe(
     border-radius:12px;
     border:1px solid rgba(255,255,255,0.1);
     text-align:center;
-}
+}}
 
 .card h3 {{
     color:#C9A84C;
@@ -744,13 +756,13 @@ st.dataframe(
             <div class="subtitle">SCORING CRÉDIT & CHURN</div>
         </div>
     </div>
+
     <div style="text-align:right">
         <div style="color:#C9A84C;">Africa AI Consulting</div>
         <div style="font-size:12px;">Données simulées</div>
     </div>
 </div>
 """, unsafe_allow_html=True)
-
 # ───────────────────────── DATA ─────────────────────────
 @st.cache_data
 def load():
