@@ -757,10 +757,10 @@ st.markdown(f"""
         </div>
     </div>
 
-    <div style="text-align:right">
-        <div style="color:#C9A84C;">Africa AI Consulting</div>
-        <div style="font-size:12px;">Données simulées</div>
-    </div>
+    st.markdown("""
+<div style="text-align:right; line-height:1.4">
+    <div style="color:#C9A84C; font-weight:bold;">Africa AI Consulting</div>
+    <div style="font-size:12px; opacity:0.8;">Données simulées • IA Banking Dashboard</div>
 </div>
 """, unsafe_allow_html=True)
 # ───────────────────────── DATA ─────────────────────────
